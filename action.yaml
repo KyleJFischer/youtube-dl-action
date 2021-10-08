@@ -1,0 +1,21 @@
+name: 'youtube-dl-action'
+description: 'Github Action to use youtube-dl'
+author: 'KyleJFischer'
+branding:
+  color: 'yellow'
+  icon: 'activity'
+inputs:
+  youtube-dl-input:
+    description: "What to give to the youtube-dl command"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install FFMpeg
+      run: sudo apt install ffmpeg
+    - name: Install YoutubeDL
+      run: sudo pip3 install youtube-dl
+    - name: Running Youtube DL
+    - name: Running Youtube DL
+      run: youtube-dl ${{ input.youtube-dl-input }}
